@@ -1,0 +1,80 @@
+body {
+    font-family: sans-serif;
+    background-color: #f6c9ff;
+    background: linear-gradient(to right, #e2e2e2, #e7c9ff);
+    margin: 150px;
+}
+
+/* Header components*/
+h1 {
+    color:#fff;
+    font-size: 45px;
+    border-radius: 25px;
+    padding: 15px;
+    background: #c08dff;
+    box-shadow:  20px 20px 60px #c1add9,
+             -20px -20px 60px #ffebff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Menu option features*/
+nav {
+    border-radius: 25px;
+    background: #e3ccff;
+    box-shadow:  20px 20px 60px #c1add9,
+             -20px -20px 60px #ffebff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Menu option one beside the other*/
+li {
+    display: inline-block;
+    margin-right: 20px;
+    padding-inline: 45px;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+  
+a:hover {
+    color: #fff;
+}
+
+.principal {
+    margin-top: 30px;
+    background-color: #c08dff;
+    border-radius: 25px;
+    box-shadow:  20px 20px 60px #c1add9,
+             -20px -20px 60px #ffebff;
+    display: flex;
+    align-items: center;
+}
+
+.secondary1 {
+    color:#fff;
+    flex: 1; /* Hace que ambos divs ocupen el mismo espacio */
+    padding: 10px;
+    float: left;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.secondary2 {
+    color:#fff;
+    flex: 1; /* Hace que ambos divs ocupen el mismo espacio */
+    padding: 10px;
+    float: left;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
