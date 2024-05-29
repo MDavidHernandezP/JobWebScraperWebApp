@@ -7,28 +7,61 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
-    <h1>Software Eng. Final Project</h1>    
+    <h1 class="headermain">Software Eng. Final Project</h1>    
     <nav>
         <ul>
-          <li><a href="#">Start</a></li>
-          <li><a href="#">General</a></li>
-          <li><a href="#">Perfil</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Info</a></li>
+          <li><a href="/home">Start</a></li>
+          <li><a href="/acknow">Acknowledgements</a></li>
+          <li><a href="/aboutus">About us</a></li>
         </ul>
     </nav>
     <div class="principal">
         <div class="secondary1">
             <h2>Querys</h2>
             <div class="tertiary1">
-
+                <form action="/home" method="post">
+                    <p>Location: </p>
+                    <p><input type="text" name="options" value=""/></p>
+                    
+                    <p>Mode: </p>
+                    <div class="checkbox-location">
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="options" value="Part-time"> Part-time
+                        </label><br>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="options" value="Full-time"> Full-time
+                        </label><br>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="options" value="Contract"> Contract
+                        </label><br>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="options" value="Temporary"> Temporary
+                        </label><br>
+                    </div>
+                    
+                    <p>Skills: </p>
+                    <div class="checkbox-container">
+                        {% for i in range(1, 26) %}
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="options" value="Option {{ i }}"> Option {{ i }}
+                        </label>
+                        {% endfor %}
+                    </div>
+                    <p><button type="submit" class="btn-submit">Submit</button></p>
+                </form>
             </div>
         </div>
     
         <div class="secondary2">
             <h2>Results</h2>
             <div class="tertiary2">
-
+                {% if results %}
+                <ul>
+                    {% for result in results %}
+                    <li>{{ result }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
             </div>
         </div>
     </div>
