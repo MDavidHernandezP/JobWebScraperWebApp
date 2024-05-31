@@ -5,8 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Scraper App</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
 </head>
 <body>
-    <h1>Hola soy el acknow</h1>
+    <header>
+        <h1 class="headermain">Software Eng. Final Project</h1>
+        <nav>
+            <ul>
+                <li><a href="/home">Start</a></li>
+                <li><a href="/acknow">Acknowledgements</a></li>
+                <li><a href="/aboutus">About us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <section class="acknowledgements">
+                <div class="section">
+                    <h2>LinkedIn</h2>
+                    <p>We would like to express our gratitude to LinkedIn for providing us with an incredible platform to connect with professionals worldwide.</p>
+                    <div class="images">
+                        <img src="{{ url_for('static', filename='css/linkedin.png') }}" alt="Image 2">
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Google Jobs</h2>
+                    <p>Our appreciation goes out to Google Jobs for offering a robust job search engine that helps us find the best candidates for our company.</p>
+                    <div class="images">
+                        <img src="{{ url_for('static', filename='css/google.png') }}" alt="Image 2">
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Other Resources</h2>
+                    <p>We also want to thank various other resources that have contributed to our success and growth. such as teachers, partners.</p>
+                    <div class="images">
+                        <img src="{{ url_for('static', filename='css/jehova.png') }}" alt="Image 2">
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <p>Curifeos Corp, Copyright &copy; 2024</p>
+    </footer>
 </body>
 </html>
+
