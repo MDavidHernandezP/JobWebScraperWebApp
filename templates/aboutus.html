@@ -4,9 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Scraper App</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesAbo.css') }}">
 </head>
 <body>
-    <h1>Hola soy el aboutus</h1>
+    <h1 class="headermain">Software Eng. Final Project</h1>    
+    <nav>
+        <ul>
+          <li><a href="/home">Start</a></li>
+          <li><a href="/acknow">Acknowledgement</a></li>
+          <li><a href="/aboutus">About us</a></li>
+        </ul>
+    </nav>
+
+    <div>
+        <section class="principal">
+            <h2 class="about-title">About Us</h2>
+            <p class="about-text">Welcome to Our Company! We are committed to delivering exceptional service and top-quality products to our valued customers. Our dedicated team of experts is here to 
+                assist you with all your needs, ensuring a seamless and satisfying experience. Trust us to be your partner in achieving success.</p>
+            <div class="images">
+                <div class="image-item">
+                    <img src="{{ url_for('static', filename='images/luis.jpg') }}" alt="Image 1">
+                    <p class="image-caption">Luis Arturo Michel Perez</p>
+                </div>
+                <div class="image-item">
+                    <img src="{{ url_for('static', filename='images/david.jpg') }}" alt="Image 2">
+                    <p class="image-caption">Mario David Hernandez Pantoja</p>
+                </div>
+                <div class="image-item">
+                    <img src="{{ url_for('static', filename='images/oscar.jpg') }}" alt="Image 2">
+                    <p class="image-caption">Oscar Martinez Estevez</p>
+                </div>
+                <div class="image-item">
+                    <img src="{{ url_for('static', filename='images/moises.jpg') }}" alt="Image 2">
+                    <p class="image-caption">Moises Jesus Carrillo Alonzo</p>
+                </div>
+                <div class="image-item">
+                    <img src="{{ url_for('static', filename='images/gerardo.jpg') }}" alt="Image 2">
+                    <p class="image-caption">Gerardo Hernandez Widman</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <audio id="background-music" autoplay loop>
+        <source src="{{ url_for('static', filename='audio/music.mp3') }}" type="audio/mpeg">
+        Tu navegador no soporta la etiqueta de audio.
+    </audio>
+    <button class="mute-button" onclick="toggleMute()">Silenciar/Activar Música</button>
+
+    <script>
+        function toggleMute() {
+            var audio = document.getElementById('background-music');
+            audio.muted = !audio.muted;
+        }
+
+        function launchConfetti() {
+            confetti({
+                particleCount: 7,
+                spread: 700,
+                origin: { y: 0 }
+            });
+        }
+
+        window.onload = function() {
+            setInterval(launchConfetti, 500);
+        };
+    </script>
 </body>
 </html>

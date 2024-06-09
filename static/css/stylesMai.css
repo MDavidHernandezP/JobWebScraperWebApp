@@ -1,0 +1,156 @@
+body {
+    font-family: sans-serif;
+    background-color: #f6c9ff;
+    background: linear-gradient(to right, #e2e2e2, #e7c9ff);
+    margin: 100px;
+}
+
+/* Header components */
+.headermain {
+    color:#fff;
+    font-size: 45px;
+    border-radius: 25px;
+    padding: 15px;
+    background: #c08dff;
+    box-shadow:  20px 20px 60px #c1add9,
+             -20px -20px 60px #ffebff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Menu option features*/
+nav {
+    border-radius: 25px;
+    background: #e3ccff;
+    box-shadow:  20px 20px 60px #c1add9,
+             -20px -20px 60px #ffebff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Menu option one beside the other*/
+li {
+    display: inline-block;
+    margin-right: 20px;
+    padding-inline: 45px;
+}
+
+a {
+    text-decoration: none;
+    color: #c08dff;
+}
+  
+a:hover {
+    color: #fff;
+}
+
+.principal {
+    margin-top: 30px;
+    background-color: #c08dff;
+    border-radius: 25px;
+    box-shadow:  20px 20px 60px #c1add9,
+             -20px -20px 60px #ffebff;
+    display: flex;
+    align-items: start;
+    padding-top: 30px;
+    height:1685px;
+}
+
+.secondary1 {
+    color:#fff;
+    flex: 1; /* Hace que ambos divs ocupen el mismo espacio */
+    padding: 10px;
+    float: left;
+    height: 400px; /* Ajustar la seccion y sus caracteristicas */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.secondary2 {
+    color:#fff;
+    flex: 1; /* Hace que ambos divs ocupen el mismo espacio */
+    padding: 10px;
+    float: left;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tertiary1 {
+    margin-top: 30px;
+    background-color: #e3ccff;
+    border-radius: 25px;
+    
+    display: flex;
+    align-items: start;
+    padding: 30px;
+    height: 1500px;
+    width: 500px;
+}
+
+.tertiary2 {
+    margin-top: 30px;
+    background-color: #e3ccff;
+    border-radius: 25px;
+    
+    display: flex;
+    align-items: start;
+    padding-top: 30px;
+    height: 1500px;
+    width: 500px;
+}
+
+.checkbox-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 475px; /* Ajusta el ancho según tus necesidades */
+}
+
+.checkbox-item {
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.checkbox-locations {
+    display: flex;
+    flex-wrap: wrap;
+    width: 500px; /* Ajusta el ancho según tus necesidades */
+}
+
+.checkbox-location {
+    display: flex;
+    flex-wrap: wrap;
+    width: 20%; /* Ajusta el ancho según tus necesidades */
+}
+
+.checkbox-technology {
+    width: 83%; /* Ajusta el ancho según tus necesidades */
+}
+
+.negrita {
+    font-weight: bold; /* Añadido para poner el texto en negrita */
+    font-size: 20px;
+
+}
+
+.checkbox-techskill {
+    width: 60%;
+}
+
+.checkbox-robotics {
+    display: flex;
+    flex-direction: column;
+}
+
+.checkbox-embedded {
+    display: flex;
+    flex-direction: column;
+}
+
+.checkbox-softskill {
+    width: 90%;
+}

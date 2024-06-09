@@ -1,0 +1,110 @@
+body {
+    font-family: sans-serif;
+    background-color: #f6c9ff;
+    background: linear-gradient(to right, #e2e2e2, #e7c9ff);
+    margin: 100px;
+}
+
+/* Header components */
+.headermain {
+    color:#fff;
+    font-size: 45px;
+    border-radius: 25px;
+    padding: 15px;
+    background: #c08dff;
+    box-shadow:  20px 20px 60px #c1add9,
+             -20px -20px 60px #ffebff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Menu option features*/
+nav {
+    border-radius: 25px;
+    background: #e3ccff;
+    box-shadow:  20px 20px 60px #c1add9,
+             -20px -20px 60px #ffebff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Menu option one beside the other*/
+li {
+    display: inline-block;
+    margin-right: 20px;
+    padding-inline: 45px;
+}
+
+a {
+    text-decoration: none;
+    color: #c08dff;
+}
+  
+a:hover {
+    color: #fff;
+}
+
+.principal {
+    margin-top: 30px;
+    background-color: #c08dff;
+    border-radius: 25px;
+    box-shadow:  20px 20px 60px #c1add9,
+             -20px -20px 60px #ffebff;
+    padding: 30px;
+}
+
+.about-title {
+    color: #fff;
+    font-size: 25px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.about-text {
+    color: #fff;
+    margin-bottom: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.image-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.images img {
+    width: 200px; /* Ajusta el tamaño según sea necesario */
+    height: 200px; /* Ajusta el tamaño según sea necesario */
+    border-radius: 15px; /* Ajusta este valor para hacer los bordes más o menos redondeados */
+    object-fit: cover; /* Asegura que la imagen cubra el contenedor sin distorsión */
+}
+
+.image-caption {
+    margin-top: 10px;
+    color: #fff;
+    text-align: center;
+    width: 100%; /* Asegura que el texto ocupe todo el ancho del contenedor */
+    margin-top: 10px;
+    min-height: 50px; /* Ajusta esta altura mínima según sea necesario */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mute-button {
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Scraper App</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesMai.css') }}">
 </head>
 <body>
     <h1 class="headermain">Software Eng. Final Project</h1>    
     <nav>
         <ul>
           <li><a href="/home">Start</a></li>
-          <li><a href="/acknow">Acknowledgements</a></li>
+          <li><a href="/acknow">Acknowledgement</a></li>
           <li><a href="/aboutus">About us</a></li>
         </ul>
     </nav>
@@ -20,32 +20,166 @@
             <h2>Querys</h2>
             <div class="tertiary1">
                 <form action="/home" method="post">
-                    <p>Location: </p>
+                    <p class="negrita">Location: </p>
                     <p><input type="text" name="options" value=""/></p>
                     
-                    <p>Mode: </p>
-                    <div class="checkbox-location">
-                        <label class="checkbox-item">
+                    <p class="negrita">Mode: </p>
+                    <div class="checkbox-locations">
+                        <label class="checkbox-location">
                             <input type="checkbox" name="options" value="Part-time"> Part-time
                         </label><br>
-                        <label class="checkbox-item">
+                        <label class="checkbox-location">
                             <input type="checkbox" name="options" value="Full-time"> Full-time
                         </label><br>
-                        <label class="checkbox-item">
+                        <label class="checkbox-location">
                             <input type="checkbox" name="options" value="Contract"> Contract
                         </label><br>
-                        <label class="checkbox-item">
+                        <label class="checkbox-location">
                             <input type="checkbox" name="options" value="Temporary"> Temporary
                         </label><br>
                     </div>
                     
-                    <p>Skills: </p>
-                    <div class="checkbox-container">
-                        {% for i in range(1, 26) %}
+                    <p class="negrita">Technologies: </p>
+                    <div class="checkbox-technology">
                         <label class="checkbox-item">
-                            <input type="checkbox" name="options" value="Option {{ i }}"> Option {{ i }}
+                            <input type="checkbox" name="options" value="Assembly language"> Assembly language
                         </label>
-                        {% endfor %}
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="options" value="C language"> C language
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="options" value="C# language"> C# language
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="options" value="C++ language"> C++ language
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="options" value="Python"> Python
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="options" value="MATLAB"> MATLAB
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="options" value="Automation"> Automation
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="options" value="Artificial intelligence"> Artificial intelligence
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="options" value="Computer vision"> Computer vision
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="options" value="Arduino"> Arduino
+                        </label>
+                    </div>
+
+                    <p class="negrita">Technical Skills: </p>
+                    <div class="checkbox-techskill">
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="options" value="Welding"> Welding
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="options" value="Soldering"> Soldering
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="options" value="Machining"> Machining
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="options" value="Mechanics"> Mechanics
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="options" value="Carpentry"> Carpentry
+                        </label>
+                    </div>
+
+                    <p class="negrita">Hard Skills (Robotics): </p>
+                    <div class="checkbox-robotics">
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="options" value="Interface Design: Facilitating communication between machines and humans"> Interface Design: Facilitating communication between machines and humans
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="options" value="Design, Assembly, Emulation, and Modification: Working on equipment or prototypes"> Design, Assembly, Emulation, and Modification: Working on equipment or prototypes
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="options" value="Patent Equipment: Handling the patenting process"> Patent Equipment: Handling the patenting process
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="options" value="Technologies for Problem Solving and Innovation: Utilizing technologies to innovate and solve problems"> Technologies for Problem Solving and Innovation: Utilizing technologies to innovate and solve problems
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="options" value="Problem Analysis and Resolution: Using different maintenance types to solve robotic and mechatronic issues"> Problem Analysis and Resolution: Using different maintenance types to solve robotic and mechatronic issues
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="options" value="Integrate Production Processes: Implementing robotic and mechatronic systems in production while respecting norms"> Integrate Production Processes: Implementing robotic and mechatronic systems in production while respecting norms
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="options" value="Create Computational Models: Implementing models using mathematical foundations"> Create Computational Models: Implementing models using mathematical foundations
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="options" value="Control and Automation: Controlling and automating equipment"> Control and Automation: Controlling and automating equipment
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="options" value="Electronics: Designing and analyzing electronic circuits; knowledge of sensors and actuators"> Electronics: Designing and analyzing electronic circuits; knowledge of sensors and actuators
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="options" value="HMI Programming: Programming human-machine interfaces"> HMI Programming: Programming human-machine interfaces
+                        </label>
+                    </div>
+
+                    <p class="negrita">Hard Skills (Embedded): </p>
+                    <div class="checkbox-embedded">
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="options" value="Microcontrollers and Microprocessors: Knowledge of these components"> Microcontrollers and Microprocessors: Knowledge of these components
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="options" value="Firmware Development: Creating firmware for embedded systems"> Firmware Development: Creating firmware for embedded systems
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="options" value="Hardware Design: Designing hardware components"> Hardware Design: Designing hardware components
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="options" value="Real-Time Operating Systems (RTOS): Working with RTOS"> Real-Time Operating Systems (RTOS): Working with RTOS
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="options" value="Peripheral Interface: Interfacing with peripherals"> Peripheral Interface: Interfacing with peripherals
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="options" value="Code Optimization: Optimizing code performance"> Code Optimization: Optimizing code performance
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="options" value="Sensors and Actuators: Handling sensors and actuators"> Sensors and Actuators: Handling sensors and actuators
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="options" value="Communication Protocols: Knowledge of protocols like CAN, LIN, Ethernet, SPI, FlexRay"> Communication Protocols: Knowledge of protocols like CAN, LIN, Ethernet, SPI, FlexRay
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="options" value="Test Automation: Automating testing processes"> Test Automation: Automating testing processes
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="options" value="Design and Simulation Tools: Experience with design and simulation tools"> Design and Simulation Tools: Experience with design and simulation tools
+                        </label>
+                    </div>
+
+                    <p class="negrita">Soft Skills: </p>
+                    <div class="checkbox-softskill">
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="options" value="Critical Thinking"> Critical Thinking
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="options" value="Decision making"> Decision making
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="options" value="Troubleshooting"> Troubleshooting
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="options" value="Teamwork"> Teamwork
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="options" value="Leadership"> Leadership
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="options" value="Bilingual"> Bilingual
+                        </label>
                     </div>
                     <p><button type="submit" class="btn-submit">Submit</button></p>
                 </form>

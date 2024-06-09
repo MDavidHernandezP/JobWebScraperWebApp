@@ -4,9 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Scraper App</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesAck.css') }}">
 </head>
 <body>
-    <h1>Hola soy el acknow</h1>
+    <h1 class="headermain">Software Eng. Final Project</h1>    
+    <nav>
+        <ul>
+          <li><a href="/home">Start</a></li>
+          <li><a href="/acknow">Acknowledgement</a></li>
+          <li><a href="/aboutus">About us</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="principal">
+            <section class="acknowledgement">
+                <div class="section">
+                    <h2>LinkedIn</h2>
+                    <p>We would like to express our gratitude to LinkedIn for providing us with an incredible platform to connect with professionals worldwide.</p>
+                    <div class="images">
+                        <img src="{{ url_for('static', filename='images/linkedin.png') }}" alt="Image 2">
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Google Jobs</h2>
+                    <p>Our appreciation goes out to Google Jobs for offering a robust job search engine that helps us find the best candidates for our company.</p>
+                    <div class="images">
+                        <img src="{{ url_for('static', filename='images/google.jpg') }}" alt="Image 2">
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Other Resources</h2>
+                    <p>We also want to thank various other resources that have contributed to our success and growth. such as teachers, and partners.</p>
+                    <div class="images">
+                        <img src="{{ url_for('static', filename='images/papavictor.jpg') }}" alt="Image 2">
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
 </body>
 </html>

@@ -1,0 +1,99 @@
+body {
+    font-family: sans-serif;
+    background-color: #f6c9ff;
+    background: linear-gradient(to right, #e2e2e2, #e7c9ff);
+    margin: 100px;
+}
+
+/* Header components */
+.headermain {
+    color:#fff;
+    font-size: 45px;
+    border-radius: 25px;
+    padding: 15px;
+    background: #c08dff;
+    box-shadow:  20px 20px 60px #c1add9,
+             -20px -20px 60px #ffebff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Menu option features*/
+nav {
+    border-radius: 25px;
+    background: #e3ccff;
+    box-shadow:  20px 20px 60px #c1add9,
+             -20px -20px 60px #ffebff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Menu option one beside the other*/
+li {
+    display: inline-block;
+    margin-right: 20px;
+    padding-inline: 45px;
+}
+
+a {
+    text-decoration: none;
+    color: #c08dff;
+}
+  
+a:hover {
+    color: #fff;
+}
+
+.principal {
+    margin-top: 30px;
+    background-color: #c08dff;
+    border-radius: 25px;
+    box-shadow:  20px 20px 60px #c1add9,
+             -20px -20px 60px #ffebff;
+    display: flex;
+    align-items: start;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.acknowledgement {
+    background-color: #c08dff;
+    border-radius: 25px;
+    padding: 30px;
+    display: flex; /* Cambiar a flexbox para alinear los elementos en línea */
+    justify-content: space-between; /* Distribuir el espacio entre las secciones */
+}
+
+.section {
+    flex: 1; /* Hacer que cada sección ocupe el mismo espacio */
+    margin: 0 10px; /* Agregar margen entre las secciones */
+    text-align: center; /* Centrar el contenido dentro de cada sección */
+    padding: 20px; /* Agregar espacio interno */
+    border-radius: 15px; /* Agregar bordes redondeados */
+    background-color: #e3ccff; /* Color de fondo */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Agregar sombra */
+    height: 395px;
+}
+
+.section h2 {
+    color: #c08dff;
+}
+
+.section p {
+    color: #fff;
+    margin-top: 10px;
+}
+
+.images {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.images img {
+    border-radius: 15px; /* Hace que las imágenes tengan bordes redondeados */
+    max-width: 100%; /* Asegura que las imágenes no excedan el tamaño del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+}

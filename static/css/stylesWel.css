@@ -1,0 +1,64 @@
+body {
+    font-family: sans-serif;
+    background-color: #f6c9ff;
+    background: linear-gradient(to right, #e2e2e2, #e7c9ff);
+    margin: 100px;
+}
+
+/* Header components */
+.headermain {
+    color:#fff;
+    font-size: 45px;
+    border-radius: 25px;
+    padding: 15px;
+    background: #c08dff;
+    box-shadow:  20px 20px 60px #c1add9,
+             -20px -20px 60px #ffebff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Inicio de la seccion para el template llamado welcome.html */
+
+.headerwelcome {
+    color:#fff;
+    font-size: 150px;
+    border-radius: 25px;
+    padding: 15px;
+    background: #c08dff;
+    box-shadow:  20px 20px 60px #c1add9,
+             -20px -20px 60px #ffebff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.divbuttonwelcome {
+    display: flex;
+    justify-content: center;  /* Centra horizontalmente */
+}
+
+.buttonwelcome {
+    color:#c08dff;
+    font-family: sans-serif;
+    font-size: 50px;
+    border-radius: 25px;
+    padding: 15px;
+    background: #e3ccff;
+    box-shadow:  20px 20px 60px #c1add9,
+             -20px -20px 60px #ffebff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+    outline: none;
+    transition: box-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.buttonwelcome:hover {
+    box-shadow: 0 0 20px 10px rgba(192, 141, 255, 0.8);  /* Efecto de glow al pasar el ratón */
+    color: white;
+}
+
+/* Fin de la seccion para el template llamado welcome.html */
