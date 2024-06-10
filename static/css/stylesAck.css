@@ -75,6 +75,7 @@ a:hover {
     background-color: #e3ccff; /* Color de fondo */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Agregar sombra */
     height: 395px;
+    box-shadow:  10px 10px 40px #8a53cd;
 }
 
 .section h2 {

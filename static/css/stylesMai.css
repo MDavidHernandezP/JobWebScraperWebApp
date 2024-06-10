@@ -90,6 +90,7 @@ a:hover {
     padding: 30px;
     height: 1500px;
     width: 500px;
+    box-shadow:  10px 10px 40px #8a53cd;
 }
 
 .tertiary2 {
@@ -100,8 +101,10 @@ a:hover {
     display: flex;
     align-items: start;
     padding-top: 30px;
-    height: 1500px;
-    width: 500px;
+    min-height: 1490px;
+    min-width: 560px;
+    max-width: 560px;
+    box-shadow:  10px 10px 40px #8a53cd;
 }
 
 .checkbox-container {

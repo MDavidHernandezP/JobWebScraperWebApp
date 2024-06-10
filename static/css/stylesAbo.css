@@ -83,6 +83,10 @@ a:hover {
     margin: 0 10px;
 }
 
+.image-item img {
+    box-shadow:  10px 10px 40px #8a53cd;
+}
+
 .images img {
     width: 200px; /* Ajusta el tamaño según sea necesario */
     height: 200px; /* Ajusta el tamaño según sea necesario */
