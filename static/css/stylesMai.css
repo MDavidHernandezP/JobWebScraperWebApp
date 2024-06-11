@@ -55,7 +55,7 @@ a:hover {
     display: flex;
     align-items: start;
     padding-top: 30px;
-    height:1685px;
+    height:1220px;
 }
 
 .secondary1 {
@@ -101,7 +101,7 @@ a:hover {
     display: flex;
     align-items: start;
     padding-top: 30px;
-    min-height: 1490px;
+    min-height: 1030px;
     min-width: 560px;
     max-width: 560px;
     box-shadow:  10px 10px 40px #8a53cd;
@@ -114,12 +114,16 @@ a:hover {
 }
 
 .checkbox-item {
+    display: inline-flex;
     box-sizing: border-box;
     margin-bottom: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+    align-items: flex-start;
 }
 
 .checkbox-locations {
-    display: flex;
+    display: inline-flex;
     flex-wrap: wrap;
     width: 500px; /* Ajusta el ancho según tus necesidades */
 }
@@ -137,7 +141,6 @@ a:hover {
 .negrita {
     font-weight: bold; /* Añadido para poner el texto en negrita */
     font-size: 20px;
-
 }
 
 .checkbox-techskill {
@@ -145,13 +148,13 @@ a:hover {
 }
 
 .checkbox-robotics {
-    display: flex;
-    flex-direction: column;
+    width: 99%;
+    max-width: 100%;
 }
 
 .checkbox-embedded {
-    display: flex;
-    flex-direction: column;
+    width: 95%;
+    max-width: 100%;
 }
 
 .checkbox-softskill {
