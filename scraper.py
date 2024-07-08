@@ -10,9 +10,10 @@ from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 
 class JobScraper:
-    def __init__(self, skills, type):
+    def __init__(self, skills, place, type):
         self.jobs = {}
         self.skills = skills
+        self.place = place
         self.type = type
         self.user_agent = UserAgent()
 
@@ -36,11 +37,11 @@ class JobScraper:
                 try:
                     # Open the main page in Selenium
                     self.driver.get(url)
-                    WebDriverWait(self.driver, 30).until(
+                    WebDriverWait(self.driver, 10).until(
                         EC.presence_of_all_elements_located((By.CSS_SELECTOR, 'div.gws-plugins-horizon-jobs__tl-lif'))
                     )
                 except Exception as e:
-                    print(f"Timeout waiting for the main page: {e.text()}")
+                    #print(f"Timeout waiting for the main page: {e}")
                     #print(self.driver.page_source)  # Print the page source for debugging
                     return
 
@@ -48,7 +49,7 @@ class JobScraper:
                 job_elements = self.driver.find_elements(By.CSS_SELECTOR, 'div.gws-plugins-horizon-jobs__tl-lif')
                 job_elements[0].click()
                 try: 
-                    WebDriverWait(self.driver, 30).until(
+                    WebDriverWait(self.driver, 10).until(
                         EC.presence_of_element_located((By.ID, 'gws-plugins-horizon-jobs__job_details_page'))
                     )
                 except Exception as e:
@@ -60,14 +61,11 @@ class JobScraper:
                 page_source = self.driver.page_source
                 soup = BeautifulSoup(page_source, 'html.parser')
 
-                # Getting the job description using BS4
                 try:
-                    
-                    #Collects all the jobs to then iterate them
+                    #Collecting all the jobs and extract their information with BS4
                     elements = soup.select('#gws-plugins-horizon-jobs__job_details_page ')
 
                     for element in elements:
-
                         try:
                             title = element.select_one('div.sH3zFd > h2').text.strip()
                         except:
@@ -125,36 +123,44 @@ class JobScraper:
             except aiohttp.ClientResponseError as e:
                 print(f"Failed to access the page. ClientResponseError: {e}")
 
-    # Async function to complete all the tasks
+    # Async function
     async def get_all_jobs(self):
-        async with aiohttp.ClientSession(connector=aiohttp.TCPConnector(limit=1)) as session:
-            queries = f'{self.skills}'
-            url = f'https://www.google.com/search?q={queries.replace(" ", "+")}&oq=trab&ibp=htl;jobs&sa=X#htivrt=jobs&fpstate=tldetail&htichips=employment_type:{self.type}&htischips=employment_type;{self.type}&htidocid=Dde8cx6hGDFWlOx9AAAAAA%3D%3D'
-            print(url)
+        async with aiohttp.ClientSession(connector=aiohttp.TCPConnector()) as session:
+            queries = f'{self.skills},{self.place}'
+            url = f'https://www.google.com/search?q={queries.replace(",", "+").replace(" ", "+")}&oq=trab&ibp=htl;jobs&sa=X#htivrt=jobs&fpstate=tldetail&htichips=employment_type:{self.type}&htischips=employment_type;{self.type}'
+            #print(url)
             await self.get_info(session, url)
-    
+
+            # If no jobs found for the city, try without the city
+            if not self.jobs:
+                queries = f'{self.skills}'
+                url = f'https://www.google.com/search?q={queries.replace(",", "+").replace(" ", "+")}&oq=trab&ibp=htl;jobs&sa=X#htivrt=jobs&fpstate=tldetail&htichips=employment_type:{self.type}&htischips=employment_type;{self.type}'
+                #print(f"Retrying without '{self.place}', new url: {url}")
+                await self.get_info(session, url)
+        
     # Saving the results on a JSON file [jobs.json]
     def save_to_json(self, output_file='jobs.json'):
         with open(output_file, 'w', encoding='utf-8') as json_file:
             json.dump(self.jobs, json_file, indent=4, ensure_ascii=False)
 
 # Main function
-async def main(skills, type):
-    scraper = JobScraper(skills, type)
+async def main(skills,place, type):
+    scraper = JobScraper(skills, place, type)
     await scraper.get_all_jobs()
     scraper.save_to_json()
     scraper.driver.quit()
 
-# ------------------ T E S T I N G -----------
+'''# ------------------ T E S T I N G -----------
 if __name__ == "__main__":
     inicio = time.time()
     print('Loading...')
 
     # User parameters [skills - type]:
-    qskills = 'python'   #Jobs Skills [example: python sql], just write the main words without commas.
-    qtype = 'FULTIME' #Type of job [FULLTIME or PARTTIME], if you don't insert an option the scraper would show the trending jobs.
+    qskills = 'html'   #Jobs Skills [example: python sql], just write the main words.
+    qplace = 'CDMX'    #City of the job [example: CDMX] , if you don't insert an option the scraper would show the trending jobs.
+    qtype = 'FULLTIME' #Type of job [FULLTIME or PARTTIME], if you don't insert an option the scraper would show the trending jobs.
 
-    asyncio.run(main(skills=qskills, type=qtype))
+    asyncio.run(main(skills=qskills, place=qplace, type=qtype))
 
     fin = time.time()
-    print(f"Complete: {fin - inicio} seconds")
+    print(f"Complete: {fin - inicio} seconds")'''
