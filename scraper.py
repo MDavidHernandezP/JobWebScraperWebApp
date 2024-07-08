@@ -155,7 +155,7 @@ if __name__ == "__main__":
     inicio = time.time()
     print('Loading...')
 
-    # User parameters [skills - type]:
+    # User parameters [skills - type - place]:
     qskills = 'html'   #Jobs Skills [example: python sql], just write the main words.
     qplace = 'CDMX'    #City of the job [example: CDMX] , if you don't insert an option the scraper would show the trending jobs.
     qtype = 'FULLTIME' #Type of job [FULLTIME or PARTTIME], if you don't insert an option the scraper would show the trending jobs.
