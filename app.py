@@ -1,35 +1,64 @@
-from flask import Flask, render_template, url_for, redirect, request
+from flask import Flask, render_template, request
+import asyncio
+from scraper import JobScraper
 
 app = Flask(__name__)
 
-@app.route("/")    # Starting URL, renders the welcome template.
+# Variable global para almacenar los trabajos encontrados
+jobs_data = {}
+
+@app.route("/")
 def main():
     return render_template("welcome.html")
 
-@app.route("/welcome")    # Renders the same template as the route of the main function.
+@app.route("/welcome")
 def welcome():
     return render_template("welcome.html")
 
-@app.route("/home", methods=["POST", "GET"])    # Home route, both methods get and post, for getting the original url and getting the url with the selected options.
+@app.route("/home", methods=["POST", "GET"])
 def home():
-    if request.method == "POST":    # Using the post method to render the template with the selected options.
-        selected_location = request.form.getlist("location")    # List with the location value.
-        selected_time = request.form.getlist("time")    # List with the mode time value.
-        selected_skills = request.form.getlist("skills")    # List with the skills values.
+    if request.method == "POST":
+        # Obtener los datos del formulario
+        location = request.form.get("location")
+        selected_technologies = request.form.getlist("technologies")
+        selected_techskills = request.form.getlist("techskills")
+        selected_robotics = request.form.getlist("robotics")
+        selected_embedded = request.form.getlist("embedded")
+        selected_softskills = request.form.getlist("softskills")
+        selected_modes = request.form.getlist("mode")
 
-        selected_options = selected_location + selected_time + selected_skills    # Concatenating lists to have just one main list.
+        # Unir las cadenas de habilidades en una sola cadena separada por comas
+        qskills = ', '.join(selected_technologies + selected_techskills + selected_robotics + selected_embedded + selected_softskills)
+        qplace = location
+        qtype = ', '.join(selected_modes)
 
-        print(selected_options)    # Printing the main list to check for errors.
+        # Ejecutar el scraper con los parámetros obtenidos
+        async def run_scraper():
+            scraper = JobScraper(qskills, qplace, qtype)
+            await scraper.get_all_jobs()
 
-        return render_template("main.html", results=selected_options)    # Render the html with the selected options.
+            # Guardar los trabajos en la variable global jobs_data
+            global jobs_data
+            jobs_data = scraper.jobs
+
+            scraper.driver.quit()
+
+            # Imprimir los valores encontrados
+            print("Jobs found:")
+            for job_title, job_details in jobs_data.items():
+                print(f"Title: {job_title}, Details: {job_details}")
+
+        asyncio.run(run_scraper())
+
+        return render_template("main.html", jobs=jobs_data)
     
-    return render_template("main.html", results=None)    # Using the get method to render the template.
+    return render_template("main.html")
 
-@app.route("/aboutus")    # About us web page.
+@app.route("/aboutus")
 def aboutus():
     return render_template("aboutus.html")
 
-@app.route("/acknow")    # Acknowledgement web page.
+@app.route("/acknow")
 def acknow():
     return render_template("acknow.html")
 
